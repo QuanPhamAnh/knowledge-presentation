@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+    Tìm kiếm
+{% endblock %}
+{% block content %}
+<div class="row" style="margin-top:20px; margin-left:20px; margin-right:20px">
+    <div class="col">
+        <h2>Tra cứu</h2>
+    </div>
+</div>
+<div class="position-relative overflow-hidden text-center">
+    <div class="col-xl-8 mx-auto">
+        <form method="POST">
+            <div class="form-group">
+                <label for="question" class="lead font-weight-normal">Nhập câu hỏi vào ô bên dưới và nhấn tìm kiếm</label>
+                <textarea class="form-control" name="question" rows="2"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" name="submit">Tìm kiếm</button>
+        </form>
+    </div>
+</div>
+
+<div class="row" style="margin-top:20px; margin-left:20px; margin-right:20px">
+    <div class="col">
+        {% if question != '' %}
+            <h5> Câu hỏi: </h5>
+            <p> {{ question }} </p>
+            <h5> Trả lời: </h5>
+            <p> something </p>
+            <h5> Các câu hỏi tương tự: </h5>
+            <p> something </p>
+        {% endif %}
+    </div>
+</div>
+
+
+
+{% endblock %}
