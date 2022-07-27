@@ -1,5 +1,6 @@
-from src import app, session
-from flask import render_template, redirect, url_for, request
+from src import app
+from flask import render_template, redirect, url_for, session, request
+from flask_session import Session
 
 
 @app.route('/', methods=['GET', 'POST'])
