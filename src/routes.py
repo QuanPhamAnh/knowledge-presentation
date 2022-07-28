@@ -1,3 +1,4 @@
+from ast import Try
 from src import app
 from flask import render_template, redirect, url_for, session, request
 from flask_session import Session
@@ -17,8 +18,11 @@ def home_page():
 def search_page():
     if request.method == 'POST':
         question = request.form['question']
-    else: 
-        question = session['store_questions']
+    else:
+        try:
+            question = session['store_questions']
+        except:
+            question = ''
     return render_template('search.html', question = question)
 
 
