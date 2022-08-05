@@ -2,3 +2,8 @@ Flask==2.0.
 flask_session
 pandas
 numpy
+rapidfuzz
+transformers
+torch
+scipy
+sklearn

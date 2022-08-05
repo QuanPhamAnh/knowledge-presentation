@@ -2,8 +2,9 @@ from ast import Try
 from src import app
 from flask import render_template, redirect, url_for, session, request
 from flask_session import Session
+from src.logic import QueryResult
 
-
+query_pipeline = QueryResult()
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home_page():
@@ -23,7 +24,7 @@ def search_page():
             question = session['store_questions']
         except:
             question = ''
-    return render_template('search.html', question = question)
+    return render_template('search.html', question = question, answer = query_pipeline.get_final_result(question))
 
 
 @app.route('/about', methods=['GET', 'POST'])
