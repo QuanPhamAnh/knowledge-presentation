@@ -1,5 +1,5 @@
 from ast import Try
-from src import app
+from app import app
 from flask import render_template, redirect, url_for, session, request
 from flask_session import Session
 from src.logic import QueryResult
